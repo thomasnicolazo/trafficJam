@@ -9,7 +9,7 @@
 */
 #define GRID_X 4
 #define GRID_Y 80
-#define NUMBER_CAR 30
+#define NUMBER_CAR 40
 #define MAX_SPEED 4
 #define ACCELERATION 1
 #define MAX_VICINITY 3
@@ -152,13 +152,13 @@ class Traffic {
             if (carAtFront) {
             if (carOnRightWay) {
                 if (carAtLeft) {
-                    if (carAtRight) {
+                    if (carAtRight) { // not useful
                         aCar.decreaseSpeed();  // cautious
-                    } else {
+                    } else { 
                         aCar.decreaseSpeed();  // still cautious
                     }
                 } else {
-                    if (carAtRight) {
+                    if (carAtRight) { // not useful
                         if (!aCar.isOnHighSpeedWay()) aCar.goLeft();
                         aCar.increaseSpeed();
                     } else {
@@ -187,15 +187,15 @@ class Traffic {
         } else { // no car ahead
             if (carOnRightWay) {
                 if (carAtLeft) {
-                    if (carAtRight) {
+                    if (carAtRight) { // not useful
                         aCar.setSpeed(aCar.getSpeed()); // steady
                     } else {
                         aCar.setSpeed(aCar.getSpeed()); // steady
                     }
                 } else {
-                    if (carAtRight) {
+                    if (carAtRight) { // not useful
                         aCar.increaseSpeed();
-                    } else {
+                    } else { // not useful
                         aCar.increaseSpeed();
                     }
                 }
